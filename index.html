@@ -284,10 +284,10 @@
         const feedbackElement = document.getElementById(`feedback-${questionId}`);
 
         if (userAnswer === correctAnswer) {
-            feedbackElement.textContent = 'Correct!';
+            feedbackElement.textContent = 'Korrect!';
             feedbackElement.className = 'feedback correct';
         } else {
-            feedbackElement.textContent = `Incorrect. The correct answer is: ${correctAnswer}`;
+            feedbackElement.textContent = `Better Luck Next Time, Bozo! Richtige Antwort: ${correctAnswer}`;
             feedbackElement.className = 'feedback incorrect';
         }
     }
