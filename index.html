@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>French Verb Conjugation Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        h1 { text-align: center; }
+        .question { margin: 20px 0; }
+        .question label { font-weight: bold; }
+        .result { margin-top: 20px; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>French Verb Conjugation Quiz</h1>
+    <form id="quizForm">
+        
+        <!-- Conjugation Questions for Specific Tenses -->
+        
+        <div class="question">
+            <label for="q1">Conjugate "regarder" in passé composé (je):</label><br>
+            <input type="text" id="q1" name="q1">
+        </div>
+
+        <div class="question">
+            <label for="q2">Conjugate "entrer" in plus-que-parfait (tu):</label><br>
+            <input type="text" id="q2" name="q2">
+        </div>
+
+        <div class="question">
+            <label for="q3">Conjugate "acheter" in conditionnel passé (il):</label><br>
+            <input type="text" id="q3" name="q3">
+        </div>
+
+        <div class="question">
+            <label for="q4">Conjugate "manger" in futur antérieur (nous):</label><br>
+            <input type="text" id="q4" name="q4">
+        </div>
+
+        <div class="question">
+            <label for="q5">Conjugate "répondre" in subjonctif passé (vous):</label><br>
+            <input type="text" id="q5" name="q5">
+        </div>
+
+        <div class="question">
+            <label for="q6">Conjugate "venir" in passé composé (ils):</label><br>
+            <input type="text" id="q6" name="q6">
+        </div>
+
+        <div class="question">
+            <label for="q7">Conjugate "dormir" in plus-que-parfait (je):</label><br>
+            <input type="text" id="q7" name="q7">
+        </div>
+
+        <div class="question">
+            <label for="q8">Conjugate "boire" in conditionnel passé (nous):</label><br>
+            <input type="text" id="q8" name="q8">
+        </div>
+
+        <div class="question">
+            <label for="q9">Conjugate "écrire" in futur antérieur (tu):</label><br>
+            <input type="text" id="q9" name="q9">
+        </div>
+
+        <div class="question">
+            <label for="q10">Conjugate "faire" in subjonctif passé (ils):</label><br>
+            <input type="text" id="q10" name="q10">
+        </div>
+
+        <div class="question">
+            <label for="q11">Conjugate "prendre" in passé composé (je):</label><br>
+            <input type="text" id="q11" name="q11">
+        </div>
+
+        <div class="question">
+            <label for="q12">Conjugate "connaître" in plus-que-parfait (vous):</label><br>
+            <input type="text" id="q12" name="q12">
+        </div>
+
+        <div class="question">
+            <label for="q13">Conjugate "voir" in conditionnel passé (tu):</label><br>
+            <input type="text" id="q13" name="q13">
+        </div>
+
+        <div class="question">
+            <label for="q14">Conjugate "courir" in futur antérieur (nous):</label><br>
+            <input type="text" id="q14" name="q14">
+        </div>
+
+        <div class="question">
+            <label for="q15">Conjugate "savoir" in subjonctif passé (je):</label><br>
+            <input type="text" id="q15" name="q15">
+        </div>
+
+        <div class="question">
+            <label for="q16">Conjugate "avoir" in passé composé (tu):</label><br>
+            <input type="text" id="q16" name="q16">
+        </div>
+
+        <div class="question">
+            <label for="q17">Conjugate "être" in plus-que-parfait (nous):</label><br>
+            <input type="text" id="q17" name="q17">
+        </div>
+
+        <div class="question">
+            <label for="q18">Conjugate "pouvoir" in conditionnel passé (ils):</label><br>
+            <input type="text" id="q18" name="q18">
+        </div>
+
+        <div class="question">
+            <label for="q19">Conjugate "envoyer" in futur antérieur (vous):</label><br>
+            <input type="text" id="q19" name="q19">
+        </div>
+
+        <div class="question">
+            <label for="q20">Conjugate "se battre" in subjonctif passé (tu):</label><br>
+            <input type="text" id="q20" name="q20">
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+    
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function checkAnswers() {
+        const answers = {
+            q1: 'ai regardé',            // regarder in passé composé (je)
+            q2: 'étais entré(e)',        // entrer in plus-que-parfait (tu)
+            q3: 'aurait acheté',         // acheter in conditionnel passé (il)
+            q4: 'aurons mangé',          // manger in futur antérieur (nous)
+            q5: 'ayez répondu',          // répondre in subjonctif passé (vous)
+            q6: 'sont venus',            // venir in passé composé (ils)
+            q7: 'avais dormi',           // dormir in plus-que-parfait (je)
+            q8: 'aurions bu',            // boire in conditionnel passé (nous)
+            q9: 'auras écrit',           // écrire in futur antérieur (tu)
+            q10: 'aient fait',           // faire in subjonctif passé (ils)
+            q11: 'ai pris',              // prendre in passé composé (je)
+            q12: 'aviez connu',          // connaître in plus-que-parfait (vous)
+            q13: 'aurais vu',            // voir in conditionnel passé (tu)
+            q14: 'aurons couru',         // courir in futur antérieur (nous)
+            q15: 'aie su',               // savoir in subjonctif passé (je)
+            q16: 'as eu',                // avoir in passé composé (tu)
+            q17: 'avions été',           // être in plus-que-parfait (nous)
+            q18: 'auraient pu',          // pouvoir in conditionnel passé (ils)
+            q19: 'aurez envoyé',         // envoyer in futur antérieur (vous)
+            q20: 'te sois battu(e)'      // se battre in subjonctif passé (tu)
+        };
+
+        let score = 0;
+        let total = Object.keys(answers).length;
+        
+        for (let q in answers) {
+            let userAnswer = document.getElementById(q).value.trim().toLowerCase();
+            if (userAnswer === answers[q]) {
+                score++;
+            }
+        }
+
+        let resultText = `You scored ${score} out of ${total}.`;
+        document.getElementById('result').textContent = resultText;
+    }
+</script>
+
+</body>
+</html>
