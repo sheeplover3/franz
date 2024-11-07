@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Franz Verbe Quiz</title>
+    <title>French Verb Conjugation Quiz</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -64,15 +64,23 @@
         .evaluate-btn {
             margin-left: 10px;
         }
-        #submitBtn {
+        #submitBtn, #randomBtn {
             display: block;
             width: 200px;
             margin: 20px auto;
             font-size: 18px;
+        }
+        #submitBtn {
             background-color: #2ecc71;
         }
         #submitBtn:hover {
             background-color: #27ae60;
+        }
+        #randomBtn {
+            background-color: #e74c3c;
+        }
+        #randomBtn:hover {
+            background-color: #c0392b;
         }
         .result {
             margin-top: 20px;
@@ -106,207 +114,128 @@
 <body>
 
 <div class="container">
-    <h1>Franz Verb Quiz</h1>
+    <h1>French Verb Conjugation Quiz</h1>
+    <button id="randomBtn" onclick="generateRandomQuestions()">Random Übung</button>
     <form id="quizForm">
-        <div class="question">
-            <label for="q1">Conjugate "regarder" in passé composé (je):</label>
-            <input type="text" id="q1" name="q1" aria-describedby="feedback-q1">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q1')">Bewerten</button>
-            <div id="feedback-q1" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q2">Conjugate "condamner" in plus-que-parfait (tu):</label>
-            <input type="text" id="q2" name="q2" aria-describedby="feedback-q2">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q2')">Bewerten</button>
-            <div id="feedback-q2" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q3">Conjugate "contrôler" in conditionnel passé (il):</label>
-            <input type="text" id="q3" name="q3" aria-describedby="feedback-q3">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q3')">Bewerten</button>
-            <div id="feedback-q3" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q4">Conjugate "élire" in futur antérieur (nous):</label>
-            <input type="text" id="q4" name="q4" aria-describedby="feedback-q4">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q4')">Bewerten</button>
-            <div id="feedback-q4" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q5">Conjugate "exiger" in subjonctif passé (vous):</label>
-            <input type="text" id="q5" name="q5" aria-describedby="feedback-q5">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q5')">Bewerten</button>
-            <div id="feedback-q5" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q6">Conjugate "venir" in passé composé (ils):</label>
-            <input type="text" id="q6" name="q6" aria-describedby="feedback-q6">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q6')">Bewerten</button>
-            <div id="feedback-q6" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q7">Conjugate "baisser" in plus-que-parfait (je):</label>
-            <input type="text" id="q7" name="q7" aria-describedby="feedback-q7">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q7')">Bewerten</button>
-            <div id="feedback-q7" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q8">Conjugate "gouverner" in conditionnel passé (nous):</label>
-            <input type="text" id="q8" name="q8" aria-describedby="feedback-q8">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q8')">Bewerten</button>
-            <div id="feedback-q8" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q9">Conjugate "s'inscrire" in futur antérieur (tu):</label>
-            <input type="text" id="q9" name="q9" aria-describedby="feedback-q9">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q9')">Bewerten</button>
-            <div id="feedback-q9" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q10">Conjugate "faire" in subjonctif passé (ils):</label>
-            <input type="text" id="q10" name="q10" aria-describedby="feedback-q10">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q10')">Bewerten</button>
-            <div id="feedback-q10" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q11">Conjugate "prendre" in passé composé (je):</label>
-            <input type="text" id="q11" name="q11" aria-describedby="feedback-q11">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q11')">Bewerten</button>
-            <div id="feedback-q11" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q12">Conjugate "modifier" in plus-que-parfait (vous):</label>
-            <input type="text" id="q12" name="q12" aria-describedby="feedback-q12">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q12')">Bewerten</button>
-            <div id="feedback-q12" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q13">Conjugate "punir" in conditionnel passé (tu):</label>
-            <input type="text" id="q13" name="q13" aria-describedby="feedback-q13">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q13')">Bewerten</button>
-            <div id="feedback-q13" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q14">Conjugate "protéger" in futur antérieur (nous):</label>
-            <input type="text" id="q14" name="q14" aria-describedby="feedback-q14">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q14')">Bewerten</button>
-            <div id="feedback-q14" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q15">Conjugate "savoir" in subjonctif passé (je):</label>
-            <input type="text" id="q15" name="q15" aria-describedby="feedback-q15">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q15')">Bewerten</button>
-            <div id="feedback-q15" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q16">Conjugate "signer" in passé composé (tu):</label>
-            <input type="text" id="q16" name="q16" aria-describedby="feedback-q16">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q16')">Bewerten</button>
-            <div id="feedback-q16" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q17">Conjugate "être" in plus-que-parfait (nous):</label>
-            <input type="text" id="q17" name="q17" aria-describedby="feedback-q17">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q17')">Bewerten</button>
-            <div id="feedback-q17" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q18">Conjugate "censurer" in conditionnel passé (ils):</label>
-            <input type="text" id="q18" name="q18" aria-describedby="feedback-q18">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q18')">Bewerten</button>
-            <div id="feedback-q18" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q19">Conjugate "envoyer" in futur antérieur (vous):</label>
-            <input type="text" id="q19" name="q19" aria-describedby="feedback-q19">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q19')">Bewerten</button>
-            <div id="feedback-q19" class="feedback"></div>
-        </div>
-
-        <div class="question">
-            <label for="q20">Conjugate "juger" in subjonctif passé (tu):</label>
-            <input type="text" id="q20" name="q20" aria-describedby="feedback-q20">
-            <button type="button" class="evaluate-btn" onclick="evaluateAnswer('q20')">Bewerten</button>
-            <div id="feedback-q20" class="feedback"></div>
-        </div>
-
-        <button type="button" id="submitBtn" onclick="checkAllAnswers()">Alle Bewerten</button>
+        <!-- Questions will be dynamically inserted here -->
     </form>
-    
+    <button type="button" id="submitBtn" onclick="checkAllAnswers()">Alle Bewerten</button>
     <div class="result" id="result"></div>
 </div>
 
 <script>
-    const answers = {
-        q1: 'j\'ai regardé',
-        q2: 'tu avais condamné',
-        q3: 'il aurait contrôlé',
-        q4: 'nous aurons élu',
-        q5: 'vous ayez exigé',
-        q6: 'ils sont venus',
-        q7: 'j\'avais baissé',
-        q8: 'nous aurions gouverné',
-        q9: 'tu te seras inscrit(e)',
-        q10: 'ils aient fait',
-        q11: 'j\'ai pris',
-        q12: 'vous aviez modifié',
-        q13: 'tu aurais puni',
-        q14: 'nous aurons protégé',
-        q15: 'j\'aie su',
-        q16: 'tu as signé',
-        q17: 'nous avions été',
-        q18: 'ils auraient censuré',
-        q19: 'vous aurez envoyé',
-        q20: 'tu aies jugé'
-    };
+    const allQuestions = [
+        { id: 'q1', verb: 'regarder', tense: 'passé composé', pronoun: 'je', answer: 'j\'ai regardé' },
+        { id: 'q2', verb: 'condamner', tense: 'plus-que-parfait', pronoun: 'tu', answer: 'tu avais condamné' },
+        { id: 'q3', verb: 'contrôler', tense: 'conditionnel passé', pronoun: 'il', answer: 'il aurait contrôlé' },
+        { id: 'q4', verb: 'élire', tense: 'futur antérieur', pronoun: 'nous', answer: 'nous aurons élu' },
+        { id: 'q5', verb: 'exiger', tense: 'subjonctif passé', pronoun: 'vous', answer: 'vous ayez exigé' },
+        { id: 'q6', verb: 'venir', tense: 'passé composé', pronoun: 'ils', answer: 'ils sont venus' },
+        { id: 'q7', verb: 'baisser', tense: 'plus-que-parfait', pronoun: 'je', answer: 'j\'avais baissé' },
+        { id: 'q8', verb: 'gouverner', tense: 'conditionnel passé', pronoun: 'nous', answer: 'nous aurions gouverné' },
+        { id: 'q9', verb: 's\'inscrire', tense: 'futur antérieur', pronoun: 'tu', answer: 'tu te seras inscrit(e)' },
+        { id: 'q10', verb: 'faire', tense: 'subjonctif passé', pronoun: 'ils', answer: 'ils aient fait' },
+        { id: 'q11', verb: 'prendre', tense: 'passé composé', pronoun: 'je', answer: 'j\'ai pris' },
+        { id: 'q12', verb: 'modifier', tense: 'plus-que-parfait', pronoun: 'vous', answer: 'vous aviez modifié' },
+        { id: 'q13', verb: 'punir', tense: 'conditionnel passé', pronoun: 'tu', answer: 'tu aurais puni' },
+        { id: 'q14', verb: 'protéger', tense: 'futur antérieur', pronoun: 'nous', answer: 'nous aurons protégé' },
+        { id: 'q15', verb: 'savoir', tense: 'subjonctif passé', pronoun: 'je', answer: 'j\'aie su' },
+        { id: 'q16', verb: 'signer', tense: 'passé composé', pronoun: 'tu', answer: 'tu as signé' },
+        { id: 'q17', verb: 'être', tense: 'plus-que-parfait', pronoun: 'nous', answer: 'nous avions été' },
+        { id: 'q18', verb: 'censurer', tense: 'conditionnel passé', pronoun: 'ils', answer: 'ils auraient censuré' },
+        { id: 'q19', verb: 'envoyer', tense: 'futur antérieur', pronoun: 'vous', answer: 'vous aurez envoyé' },
+        { id: 'q20', verb: 'juger', tense: 'subjonctif passé', pronoun: 'tu', answer: 'tu aies jugé' },
+        // New irregular verbs with similar conjugation patterns
+        { id: 'q21', verb: 'tenir', tense: 'passé composé', pronoun: 'nous', answer: 'nous avons tenu' },
+        { id: 'q22', verb: 'devenir', tense: 'plus-que-parfait', pronoun: 'ils', answer: 'ils étaient devenus' },
+        { id: 'q23', verb: 'revenir', tense: 'conditionnel passé', pronoun: 'elle', answer: 'elle serait revenue' },
+        { id: 'q24', verb: 'intervenir', tense: 'futur antérieur', pronoun: 'je', answer: 'je serai intervenu(e)' },
+        { id: 'q25', verb: 'convenir', tense: 'subjonctif passé', pronoun: 'vous', answer: 'vous soyez convenu(e)s' },
+        { id: 'q26', verb: 'apprendre', tense: 'passé composé', pronoun: 'tu', answer: 'tu as appris' },
+        { id: 'q27', verb: 'comprendre', tense: 'plus-que-parfait', pronoun: 'nous', answer: 'nous avions compris' },
+        { id: 'q28', verb: 'surprendre', tense: 'conditionnel passé', pronoun: 'ils', answer: 'ils auraient surpris' },
+        { id: 'q29', verb: 'entreprendre', tense: 'futur antérieur', pronoun: 'vous', answer: 'vous aurez entrepris' },
+        { id: 'q30', verb: 'reprendre', tense: 'subjonctif passé', pronoun: 'je', answer: 'j\'aie repris' },
+        { id: 'q31', verb: 'mettre', tense: 'passé composé', pronoun: 'nous', answer: 'nous avons mis' },
+        { id: 'q32', verb: 'permettre', tense: 'plus-que-parfait', pronoun: 'tu', answer: 'tu avais permis' },
+        { id: 'q33', verb: 'promettre', tense: 'conditionnel passé', pronoun: 'il', answer: 'il aurait promis' },
+        { id: 'q34', verb: 'admettre', tense: 'futur antérieur', pronoun: 'vous', answer: 'vous aurez admis' },
+        { id: 'q35', verb: 'soumettre', tense: 'subjonctif passé', pronoun: 'elles', answer: 'elles aient soumis' },
+        { id: 'q36', verb: 'dire', tense: 'passé composé', pronoun: 'je', answer: 'j\'ai dit' },
+        { id: 'q37', verb: 'interdire', tense: 'plus-que-parfait', pronoun: 'nous', answer: 'nous avions interdit' },
+        { id: 'q38', verb: 'prédire', tense: 'conditionnel passé', pronoun: 'tu', answer: 'tu aurais prédit' },
+        { id: 'q39', verb: 'contredire', tense: 'futur antérieur', pronoun: 'ils', answer: 'ils auront contredit' },
+        { id: 'q40', verb: 'médire', tense: 'subjonctif passé', pronoun: 'vous', answer: 'vous ayez médit' },
+        { id: 'q41', verb: 'écrire', tense: 'passé composé', pronoun: 'elle', answer: 'elle a écrit' },
+        { id: 'q42', verb: 'décrire', tense: 'plus-que-parfait', pronoun: 'je', answer: 'j\'avais décrit' },
+        { id: 'q43', verb: 'inscrire', tense: 'conditionnel passé', pronoun: 'nous', answer: 'nous aurions inscrit' },
+        { id: 'q44', verb: 'prescrire', tense: 'futur antérieur', pronoun: 'tu', answer: 'tu auras prescrit' },
+        { id: 'q45', verb: 'transcrire', tense: 'subjonctif passé', pronoun: 'ils', answer: 'ils aient transcrit' },
+        { id: 'q46', verb: 'conduire', tense: 'passé composé', pronoun: 'vous', answer: 'vous avez conduit' },
+        { id: 'q47', verb: 'produire', tense: 'plus-que-parfait', pronoun: 'il', answer: 'il avait produit' },
+        { id: 'q48', verb: 'réduire', tense: 'conditionnel passé', pronoun: 'elles', answer: 'elles auraient réduit' },
+        { id: 'q49', verb: 'traduire', tense: 'futur antérieur', pronoun: 'je', answer: 'j\'aurai traduit' },
+        { id: 'q50', verb: 'séduire', tense: 'subjonctif passé', pronoun: 'nous', answer: 'nous ayons séduit' }
+    ];
+
+    let currentQuestions = [];
+
+    function generateRandomQuestions() {
+        currentQuestions = [];
+        const shuffled = allQuestions.sort(() => 0.5 - Math.random());
+        currentQuestions = shuffled.slice(0, 20);
+        renderQuestions();
+    }
+
+    function renderQuestions() {
+        const form = document.getElementById('quizForm');
+        form.innerHTML = '';
+        currentQuestions.forEach((q, index) => {
+            const questionHtml = `
+                <div class="question">
+                    <label for="${q.id}">Conjugate "${q.verb}" in ${q.tense} (${q.pronoun}):</label>
+                    <input type="text" id="${q.id}" name="${q.id}" aria-describedby="feedback-${q.id}">
+                    <button type="button" class="evaluate-btn" onclick="evaluateAnswer('${q.id}')">Bewerten</button>
+                    <div id="feedback-${q.id}" class="feedback"></div>
+                </div>
+            `;
+            form.innerHTML += questionHtml;
+        });
+    }
 
     function evaluateAnswer(questionId) {
+        const question = currentQuestions.find(q => q.id === questionId);
         const userAnswer = document.getElementById(questionId).value.trim().toLowerCase();
-        const correctAnswer = answers[questionId];
+        const correctAnswer = question.answer;
         const feedbackElement = document.getElementById(`feedback-${questionId}`);
 
         if (userAnswer === correctAnswer) {
-            feedbackElement.textContent = 'Korrect!';
+            feedbackElement.textContent = 'Korrekt!';
             feedbackElement.className = 'feedback correct';
         } else {
-            feedbackElement.textContent = `Better Luck Next Time, Bozo! Richtige Antwort: ${correctAnswer}`;
+            feedbackElement.textContent = `Falsch. Die Korrekte Antwort ist: ${correctAnswer}`;
             feedbackElement.className = 'feedback incorrect';
         }
     }
 
     function checkAllAnswers() {
         let score = 0;
-        let total = Object.keys(answers).length;
+        let total = currentQuestions.length;
         
-        for (let q in answers) {
-            let userAnswer = document.getElementById(q).value.trim().toLowerCase();
-            if (userAnswer === answers[q]) {
+        currentQuestions.forEach(q => {
+            let userAnswer = document.getElementById(q.id).value.trim().toLowerCase();
+            if (userAnswer === q.answer) {
                 score++;
             }
-            evaluateAnswer(q);
-        }
+            evaluateAnswer(q.id);
+        });
 
-        let resultText = `Du hattest ${score} von ${total} richtig.`;
+        let resultText = `You scored ${score} out of ${total}.`;
         document.getElementById('result').textContent = resultText;
     }
+
+    // Initialize with random questions
+    generateRandomQuestions();
 </script>
 
 </body>
